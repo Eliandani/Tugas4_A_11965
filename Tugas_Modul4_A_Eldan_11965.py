@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 
 def scatter(model, model_name, data, new_point, features, color_scale, title):
     clusters = model.fit_predict(data[features])
-    data(f"{model_name}_Cluster") = clusters
+    data[f"{model_name}_Cluster"] = clusters
     
     if model_name == "KMeans_model":
         new_cluster = model.predict(new_point[features])[0]
